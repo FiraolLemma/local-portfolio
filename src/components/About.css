@@ -1,0 +1,90 @@
+/* ========== SECTION WRAPPER ========== */
+.about-section {
+  position: relative;
+  padding: 6rem 1rem;
+  --ribbon: linear-gradient(120deg, rgba(255,163,26,.25), transparent 70%);
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.about-section.show { opacity: 1; transform: translateY(0); }
+
+/* angled decorative ribbon */
+.angled-bg {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ribbon);
+  transform: skewY(-4deg);
+  transform-origin: top left;
+  z-index: -1;
+}
+
+/* -------- layout -------- */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* -------- images -------- */
+.about-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  perspective: 800px;          /* depth */
+}
+.about-image-grid figure {
+  margin: 0; position: relative;
+  overflow: hidden; border-radius: 12px;
+  transform: rotateX(8deg) rotateY(var(--tilt, 0deg));
+  animation: float 6s ease-in-out infinite alternate;
+  opacity: 0; transform-origin: center;
+  transition: opacity .8s;
+}
+.about-section.show .about-image-grid figure { opacity: 1; }
+
+.about-image-grid img {
+  width: 100%; height: 220px; object-fit: cover;
+  transition: transform .4s;
+}
+.about-image-grid figure:hover img { transform: scale(1.08); }
+
+/* gentle float */
+@keyframes float {
+  to { transform: rotateX(8deg) translateY(-6px) rotateY(calc(var(--tilt,0deg) + 4deg)); }
+}
+
+/* -------- text -------- */
+.section-title { font-size: clamp(2rem,4.5vw,3rem); margin-bottom: 2rem; }
+.about-text p { margin-bottom: 1.2rem; line-height: 1.6; }
+.skills-heading { margin-top: 1.5rem; }
+
+/* skill chips */
+.skill-tags { display: flex; flex-wrap: wrap; gap: .6rem; }
+.skill-tags span {
+  background: rgba(255,255,255,.1);
+  border: 1px solid var(--primary, #ffa31a);
+  color: var(--primary, #ffa31a);
+  padding: .45rem 1rem;
+  border-radius: 40px;
+  font-size: .9rem;
+  backdrop-filter: blur(6px);
+  animation: pulse 3.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 0 rgba(255,163,26,0); }
+  50%      { transform: translateY(-4px); box-shadow: 0 4px 18px rgba(255,163,26,.25); }
+}
+
+/* stagger reveal of skill chips */
+.skill-tags span { opacity: 0; transform: scale(.8); transition: opacity .5s, transform .5s; }
+.about-section.show .skill-tags span { opacity: 1; transform: scale(1); }
+
+/* -------- responsiveness -------- */
+@media (max-width: 800px) {
+  .about-content { grid-template-columns: 1fr; }
+  .about-image-grid { order: -1; margin-bottom: 2rem; }
+}

@@ -1,3 +1,29 @@
+
+
+chicken website mockup
+
+my-portfolio\node_modules
+my-portfolio\public
+my-portfolio\public\favicon.ico
+my-portfolio\public\index.html
+my-portfolio\public\logo192.png
+my-portfolio\public\logo512.png
+my-portfolio\public\manifest.json
+my-portfolio\public\robots.txt
+my-portfolio\src
+my-portfolio\src\components
+my-portfolio\src\components\About.js
+my-portfolio\src\components\Header.js
+my-portfolio\src\components\Projects.js
+my-portfolio\src\App.css
+my-portfolio\src\App.js
+my-portfolio\src\index.css
+my-portfolio\src\index.js
+my-portfolio\.gitignore
+my-portfolio\package-lock.json
+my-portfolio\package.json
+my-portfolio\README.md
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
