@@ -10,6 +10,7 @@
 
 /* ---------- MAIN WRAPPER ---------- */
 .header {
+  width:100vw;
   min-height: 100vh;
   color: #fff;
   position: relative;
@@ -184,4 +185,26 @@
 .btn-outline:hover::before {
   opacity: 0.6;
   transform: scale(1.4);
+}
+
+/*-- for mobile screen size --*/
+@media (min-width:300px) and (max-width:1000px){
+  .navbar {
+    background: rgba(11, 167, 120, 0.84);
+  height: 40px;
+  padding: 0 1rem;
+}
+.logo {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.logo {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
 }

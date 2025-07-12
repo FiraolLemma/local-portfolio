@@ -2,7 +2,7 @@
 .about-section {
   position: relative;
   padding: 6rem 1rem;
-  --ribbon: linear-gradient(120deg, rgba(255,163,26,.25), transparent 70%);
+  --ribbon: linear-gradient(120deg, rgba(13, 83, 56, 0.77), transparent 70%);
   opacity: 0;
   transform: translateY(60px);
   transition: opacity 1s ease, transform 1s ease;
